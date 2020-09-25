@@ -6,12 +6,10 @@ function novoElemento(tagName,className){
 
 function Barreira(reversa = false){
     this.elemento = novoElemento('div', 'barreira')
-
     const borda = novoElemento('div', 'borda')
     const corpo = novoElemento('div','corpo')
     this.elemento.appendChild(reversa ? corpo : borda)
     this.elemento.appendChild(reversa ? borda : corpo)
-
     this.setAltura = altura => corpo.style.height = `${altura}px`
 }
 
@@ -72,7 +70,7 @@ function Barreiras(altura, largura, abertura, espaco, notificarPonto){
 }
 
 
-const barreiras = new Barreiras(700,1200,200,100)
+const barreiras = new Barreiras(700,1200,300,400)
 const areaDoJogo = document.querySelector('[wm-flappy]')
 barreiras.pares.forEach(par => areaDoJogo.appendChild(par.elemento))
 
